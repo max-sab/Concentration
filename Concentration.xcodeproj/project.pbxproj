@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500FBC53228571C70006014D /* concentration_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 500FBC52228571C70006014D /* concentration_icon.png */; };
 		5025F0F222798F53001127C9 /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025F0F122798F53001127C9 /* Concentration.swift */; };
 		5025F0F422799494001127C9 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5025F0F322799494001127C9 /* Card.swift */; };
 		5027B5522242EAA100B483D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5027B5512242EAA100B483D0 /* AppDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		500FBC52228571C70006014D /* concentration_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = concentration_icon.png; path = ../../../concentration_icon.png; sourceTree = "<group>"; };
 		5025F0F122798F53001127C9 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		5025F0F322799494001127C9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		5027B54E2242EAA100B483D0 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +66,7 @@
 				5027B5532242EAA100B483D0 /* ViewController.swift */,
 				5027B5552242EAA100B483D0 /* Main.storyboard */,
 				5027B55D2242EAA100B483D0 /* Info.plist */,
+				500FBC52228571C70006014D /* concentration_icon.png */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500FBC53228571C70006014D /* concentration_icon.png in Resources */,
 				5027B55C2242EAA100B483D0 /* LaunchScreen.storyboard in Resources */,
 				5027B5592242EAA100B483D0 /* Assets.xcassets in Resources */,
 				5027B5572242EAA100B483D0 /* Main.storyboard in Resources */,
