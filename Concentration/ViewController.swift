@@ -80,6 +80,7 @@ class ViewController: UIViewController {
              "emojiValentinesDay":["💕","🌹","💑","🍷","💋","🥰"],
              "emojiMashaSamovol": ["👸🏽","😍","❤️","🥇","🍣","🐱"],
              "emojiStudyingDay":["🤓","🤔","👨🏼‍🏫","🏫","🚌","🎓"]]
+        
         currentEmojiThemeName = Array(dictionaryOfThemes.keys)[Int(arc4random_uniform(UInt32(Array(dictionaryOfThemes).count)))]
         initialViewSettings()
         updateViewFromModel()
