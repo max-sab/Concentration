@@ -12,16 +12,59 @@
 import UIKit
 
 class ViewController: UIViewController {
-    lazy var game = Concetration(numberOfPairsOfCards: (cardButtons.count+1)/2)
+    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count+1)/2)
     
     @IBOutlet weak var flipCountLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
+    
     @IBOutlet var cardButtons: [UIButton]!
+    
+    private var levelCount = 1
+    private let maxLevel = 6
+    private var arrOfUsedEmojis: [String] = ["emojiHalloween"]
+
+    
+    override func viewDidLoad() {
+          levelLabel.text = "Level: \(levelCount)"
+    }
+    
     
     @IBAction func touchCard(_ sender: UIButton) {
         if let cardNumber = cardButtons.index(of: sender){
              game.chooseCard(at: cardNumber)
              updateViewFromModel()
+            if game.goToNextLevel == true{
+                if levelCount<maxLevel{
+                    let popUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpVCid") as! PopUpViewController // 1
+                    
+                    self.addChildViewController(popUpVC) // 2
+                    popUpVC.view.frame = self.view.frame  // 3
+                    self.view.addSubview(popUpVC.view) // 4
+                    
+                    popUpVC.didMove(toParentViewController: self) // 5
+                    
+                    transitionToDifferentLevel(level: game.level)
+                    levelCount += 1
+                    levelLabel.text = "Level: \(levelCount) "
+                    
+                    game.goToNextLevel = false
+                } else{
+                    arrOfUsedEmojis.removeAll()
+                    newGameButtonPressed(cardButtons[0])
+                    let popUpFinish = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "finishedGamePopUp") as! FinishGameViewController // 1
+                    
+                    self.addChildViewController(popUpFinish) // 2
+                    popUpFinish.view.frame = self.view.frame  // 3
+                    self.view.addSubview(popUpFinish.view) // 4
+                    
+                    popUpFinish.didMove(toParentViewController: self) // 5
+                    
+                    
+                }
+               
+            }
+            
         } else{
             print("Wrong card chosen")
         }
@@ -72,7 +115,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func newGameButtonPressed(_ sender: UIButton) {
-        game = Concetration(numberOfPairsOfCards: (cardButtons.count+1)/2)
+        levelCount = 1
+        levelLabel.text = "Level: \(levelCount) "
+        game = Concentration(numberOfPairsOfCards: (cardButtons.count+1)/2)
         dictionaryOfThemes =
             ["emojiHalloween":["👻","🎃", "🍭","😈","🕷","🕸"],
              "emojiNewYear":["🥂","⛄️","❄️","🌲","🐉","🎅🏻"],
@@ -81,7 +126,32 @@ class ViewController: UIViewController {
              "emojiMashaSamovol": ["👸🏽","😍","❤️","🥇","🍣","🐱"],
              "emojiStudyingDay":["🤓","🤔","👨🏼‍🏫","🏫","🚌","🎓"]]
         
-        currentEmojiThemeName = Array(dictionaryOfThemes.keys)[Int(arc4random_uniform(UInt32(Array(dictionaryOfThemes).count)))]
+        //currentEmojiThemeName = //Array(dictionaryOfThemes.keys)[Int(arc4random_uniform(UInt32(Array(dictionaryOfThemes).count)))]
+        currentEmojiThemeName = "emojiHalloween"
+        initialViewSettings()
+        updateViewFromModel()
+    }
+    
+    func transitionToDifferentLevel(level: Int){
+        game = Concentration(numberOfPairsOfCards: (cardButtons.count+1)/2)
+        dictionaryOfThemes =
+            ["emojiHalloween":["👻","🎃", "🍭","😈","🕷","🕸"],
+             "emojiNewYear":["🥂","⛄️","❄️","🌲","🐉","🎅🏻"],
+             "emojiIndependenceDay":["🇺🇸","🇺🇦","🗽","🇺🇳","👮🏻‍♂️","👨🏿‍💼"],
+             "emojiValentinesDay":["💕","🌹","💑","🍷","💋","🥰"],
+             "emojiMashaSamovol": ["👸🏽","😍","❤️","🥇","🍣","🐱"],
+             "emojiStudyingDay":["🤓","🤔","👨🏼‍🏫","🏫","🚌","🎓"]]
+        
+      
+        while true{
+            currentEmojiThemeName = Array(dictionaryOfThemes.keys)[Int(arc4random_uniform(UInt32(Array(dictionaryOfThemes).count)))]
+            if !arrOfUsedEmojis.contains(currentEmojiThemeName){
+                arrOfUsedEmojis.append(currentEmojiThemeName)
+                break
+            }
+            
+       }
+      //  currentEmojiThemeName = Array(dictionaryOfThemes.keys)[level-1]
         initialViewSettings()
         updateViewFromModel()
     }

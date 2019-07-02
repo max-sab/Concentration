@@ -14,9 +14,15 @@
 		5027B5572242EAA100B483D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5027B5552242EAA100B483D0 /* Main.storyboard */; };
 		5027B5592242EAA100B483D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5027B5582242EAA100B483D0 /* Assets.xcassets */; };
 		5027B55C2242EAA100B483D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5027B55A2242EAA100B483D0 /* LaunchScreen.storyboard */; };
+		50DBEB2222B03CB6001D9BB5 /* StartWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBEB2122B03CB6001D9BB5 /* StartWindowViewController.swift */; };
+		50DBEB2422B04161001D9BB5 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBEB2322B04161001D9BB5 /* PopUpViewController.swift */; };
+		50DBEB2622B051D2001D9BB5 /* concentration_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DBEB2522B051D1001D9BB5 /* concentration_icon.png */; };
+		50DBEB2922B06DD0001D9BB5 /* FinishGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBEB2822B06DD0001D9BB5 /* FinishGameViewController.swift */; };
+		5FB2986D8CF6ABFC5C9FFC26 /* Pods_Concentration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448E7F6DD290BA654DF00DF0 /* Pods_Concentration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		448E7F6DD290BA654DF00DF0 /* Pods_Concentration.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Concentration.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5025F0F122798F53001127C9 /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		5025F0F322799494001127C9 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		5027B54E2242EAA100B483D0 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +32,12 @@
 		5027B5582242EAA100B483D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5027B55B2242EAA100B483D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5027B55D2242EAA100B483D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50DBEB2122B03CB6001D9BB5 /* StartWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWindowViewController.swift; sourceTree = "<group>"; };
+		50DBEB2322B04161001D9BB5 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		50DBEB2522B051D1001D9BB5 /* concentration_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = concentration_icon.png; path = ../../../concentration_icon.png; sourceTree = "<group>"; };
+		50DBEB2822B06DD0001D9BB5 /* FinishGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGameViewController.swift; sourceTree = "<group>"; };
+		6A47140CED9BD560DBFEC5FD /* Pods-Concentration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concentration.release.xcconfig"; path = "Target Support Files/Pods-Concentration/Pods-Concentration.release.xcconfig"; sourceTree = "<group>"; };
+		BEEBEA05235E0B3B3478E06F /* Pods-Concentration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concentration.debug.xcconfig"; path = "Target Support Files/Pods-Concentration/Pods-Concentration.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +45,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FB2986D8CF6ABFC5C9FFC26 /* Pods_Concentration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0775AD48819B31967D3BF034 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				448E7F6DD290BA654DF00DF0 /* Pods_Concentration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5027B5452242EAA100B483D0 = {
 			isa = PBXGroup;
 			children = (
 				5027B5502242EAA100B483D0 /* Concentration */,
 				5027B54F2242EAA100B483D0 /* Products */,
+				A93E99CEFD73E50EAD94DA28 /* Pods */,
+				0775AD48819B31967D3BF034 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,8 +85,12 @@
 				5025F0F322799494001127C9 /* Card.swift */,
 				5027B5632242ECFB00B483D0 /* Supporting Files */,
 				5027B5532242EAA100B483D0 /* ViewController.swift */,
+				50DBEB2322B04161001D9BB5 /* PopUpViewController.swift */,
 				5027B5552242EAA100B483D0 /* Main.storyboard */,
 				5027B55D2242EAA100B483D0 /* Info.plist */,
+				50DBEB2522B051D1001D9BB5 /* concentration_icon.png */,
+				50DBEB2122B03CB6001D9BB5 /* StartWindowViewController.swift */,
+				50DBEB2822B06DD0001D9BB5 /* FinishGameViewController.swift */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
@@ -78,6 +105,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		A93E99CEFD73E50EAD94DA28 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BEEBEA05235E0B3B3478E06F /* Pods-Concentration.debug.xcconfig */,
+				6A47140CED9BD560DBFEC5FD /* Pods-Concentration.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +121,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5027B5602242EAA100B483D0 /* Build configuration list for PBXNativeTarget "Concentration" */;
 			buildPhases = (
+				D0C3AFD122D2EC5A3C648EB7 /* [CP] Check Pods Manifest.lock */,
 				5027B54A2242EAA100B483D0 /* Sources */,
 				5027B54B2242EAA100B483D0 /* Frameworks */,
 				5027B54C2242EAA100B483D0 /* Resources */,
+				B3F0C787AACF3D840170489D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -137,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50DBEB2622B051D2001D9BB5 /* concentration_icon.png in Resources */,
 				5027B55C2242EAA100B483D0 /* LaunchScreen.storyboard in Resources */,
 				5027B5592242EAA100B483D0 /* Assets.xcassets in Resources */,
 				5027B5572242EAA100B483D0 /* Main.storyboard in Resources */,
@@ -145,12 +184,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B3F0C787AACF3D840170489D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Concentration/Pods-Concentration-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Cheers/Cheers.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cheers.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Concentration/Pods-Concentration-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0C3AFD122D2EC5A3C648EB7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Concentration-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5027B54A2242EAA100B483D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				5027B5542242EAA100B483D0 /* ViewController.swift in Sources */,
+				50DBEB2422B04161001D9BB5 /* PopUpViewController.swift in Sources */,
+				50DBEB2922B06DD0001D9BB5 /* FinishGameViewController.swift in Sources */,
+				50DBEB2222B03CB6001D9BB5 /* StartWindowViewController.swift in Sources */,
 				5027B5522242EAA100B483D0 /* AppDelegate.swift in Sources */,
 				5025F0F222798F53001127C9 /* Concentration.swift in Sources */,
 				5025F0F422799494001127C9 /* Card.swift in Sources */,
@@ -288,6 +373,7 @@
 		};
 		5027B5612242EAA100B483D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEEBEA05235E0B3B3478E06F /* Pods-Concentration.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -303,6 +389,7 @@
 		};
 		5027B5622242EAA100B483D0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A47140CED9BD560DBFEC5FD /* Pods-Concentration.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -8,10 +8,13 @@
 
 import Foundation
 
-class Concetration{
+class Concentration{
     private(set) var cards =  [Card]()////////////////
     public var numberOfFlips = 0
     public var score = 0
+    public var level = 1
+    public var goToNextLevel = false
+    
     private var indexOfOnlyFacedUpCard: Int?{
         get{
             var onlyOneCardFacedUp: Int?
@@ -50,12 +53,12 @@ class Concetration{
                     //Bingo!
                     cards[index].isMatched=true
                     cards[matchedIndex].isMatched=true
-                    score+=3
+                    score+=2
                 }
                 //comes here either if cards were matched or if those chosen cards were unmatched
                 
                 //decreasing score if card was seen before and unmatched
-                if (cards[index].hasSeenBefore && !cards[index].isMatched){
+                if (cards[index].hasSeenBefore && !cards[index].isMatched && score>0){
                     score = score - 1
                 }
                 cards[index].isFaceUp=true
@@ -66,6 +69,15 @@ class Concetration{
                 indexOfOnlyFacedUpCard = index
             }
         }
+        
+        for i in cards.indices{
+            if cards[i].isMatched == false{
+                return
+            }
+        }
+        
+        goToNextLevel = true
+        level += 1
     }
     
     init(numberOfPairsOfCards:Int){
