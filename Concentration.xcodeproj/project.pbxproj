@@ -16,7 +16,6 @@
 		5027B55C2242EAA100B483D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5027B55A2242EAA100B483D0 /* LaunchScreen.storyboard */; };
 		50DBEB2222B03CB6001D9BB5 /* StartWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBEB2122B03CB6001D9BB5 /* StartWindowViewController.swift */; };
 		50DBEB2422B04161001D9BB5 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBEB2322B04161001D9BB5 /* PopUpViewController.swift */; };
-		50DBEB2622B051D2001D9BB5 /* concentration_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DBEB2522B051D1001D9BB5 /* concentration_icon.png */; };
 		50DBEB2922B06DD0001D9BB5 /* FinishGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBEB2822B06DD0001D9BB5 /* FinishGameViewController.swift */; };
 		5FB2986D8CF6ABFC5C9FFC26 /* Pods_Concentration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448E7F6DD290BA654DF00DF0 /* Pods_Concentration.framework */; };
 /* End PBXBuildFile section */
@@ -34,7 +33,6 @@
 		5027B55D2242EAA100B483D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50DBEB2122B03CB6001D9BB5 /* StartWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWindowViewController.swift; sourceTree = "<group>"; };
 		50DBEB2322B04161001D9BB5 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
-		50DBEB2522B051D1001D9BB5 /* concentration_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = concentration_icon.png; path = ../../../concentration_icon.png; sourceTree = "<group>"; };
 		50DBEB2822B06DD0001D9BB5 /* FinishGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGameViewController.swift; sourceTree = "<group>"; };
 		6A47140CED9BD560DBFEC5FD /* Pods-Concentration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concentration.release.xcconfig"; path = "Target Support Files/Pods-Concentration/Pods-Concentration.release.xcconfig"; sourceTree = "<group>"; };
 		BEEBEA05235E0B3B3478E06F /* Pods-Concentration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Concentration.debug.xcconfig"; path = "Target Support Files/Pods-Concentration/Pods-Concentration.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 				50DBEB2322B04161001D9BB5 /* PopUpViewController.swift */,
 				5027B5552242EAA100B483D0 /* Main.storyboard */,
 				5027B55D2242EAA100B483D0 /* Info.plist */,
-				50DBEB2522B051D1001D9BB5 /* concentration_icon.png */,
 				50DBEB2122B03CB6001D9BB5 /* StartWindowViewController.swift */,
 				50DBEB2822B06DD0001D9BB5 /* FinishGameViewController.swift */,
 			);
@@ -175,7 +172,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50DBEB2622B051D2001D9BB5 /* concentration_icon.png in Resources */,
 				5027B55C2242EAA100B483D0 /* LaunchScreen.storyboard in Resources */,
 				5027B5592242EAA100B483D0 /* Assets.xcassets in Resources */,
 				5027B5572242EAA100B483D0 /* Main.storyboard in Resources */,

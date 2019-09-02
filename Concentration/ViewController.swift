@@ -14,7 +14,11 @@ import UIKit
 class ViewController: UIViewController {
     lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count+1)/2)
     
-    @IBOutlet weak var flipCountLabel: UILabel!
+    @IBOutlet weak var flipCountLabel: UILabel!{
+        didSet{
+            setFlipsLabel() 
+        }
+    }
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     
@@ -23,6 +27,25 @@ class ViewController: UIViewController {
     private var levelCount = 1
     private let maxLevel = 6
     private var arrOfUsedEmojis: [String] = ["emojiHalloween"]
+    
+    var emoji = [Card:String]()
+    
+    lazy var currentEmojiThemeName = "emojiHalloween"
+    
+    var backgroundColor=#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    var cardsColor=#colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+    
+    
+    //emoji packs
+    
+    var dictionaryOfThemes: [String:[String]]! =
+        ["emojiHalloween":["👻","🎃", "🍭","😈","🕷","🕸"],
+         "emojiNewYear":["🥂","⛄️","❄️","🌲","🐉","🎅🏻"],
+         "emojiIndependenceDay":["🇺🇸","🇺🇦","🗽","🇺🇳","👮🏻‍♂️","👨🏿‍💼"],
+         "emojiValentinesDay":["💕","🌹","💑","🍷","💋","🥰"],
+         "emojiMashaSamovol": ["👸🏽","😍","❤️","🥇","🍣","🐱"],
+         "emojiStudyingDay":["🤓","🤔","👨🏼‍🏫","🏫","🚌","🎓"]]
+
 
     
     override func viewDidLoad() {
@@ -45,7 +68,7 @@ class ViewController: UIViewController {
                     popUpVC.didMove(toParentViewController: self) // 5
                     
                     transitionToDifferentLevel(level: game.level)
-                    levelCount += 1
+                     levelCount += 1
                     levelLabel.text = "Level: \(levelCount) "
                     
                     game.goToNextLevel = false
@@ -69,28 +92,20 @@ class ViewController: UIViewController {
             print("Wrong card chosen")
         }
     }
-    
-    //emoji packs
-    
-    var dictionaryOfThemes: [String:[String]]! =
-                            ["emojiHalloween":["👻","🎃", "🍭","😈","🕷","🕸"],
-                            "emojiNewYear":["🥂","⛄️","❄️","🌲","🐉","🎅🏻"],
-                            "emojiIndependenceDay":["🇺🇸","🇺🇦","🗽","🇺🇳","👮🏻‍♂️","👨🏿‍💼"],
-                            "emojiValentinesDay":["💕","🌹","💑","🍷","💋","🥰"],
-                            "emojiMashaSamovol": ["👸🏽","😍","❤️","🥇","🍣","🐱"],
-                            "emojiStudyingDay":["🤓","🤔","👨🏼‍🏫","🏫","🚌","🎓"]]
-
-    var emoji = [Int:String]()
-    
-    lazy var currentEmojiThemeName = "emojiHalloween"
-    
-    var backgroundColor=#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-    var cardsColor=#colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
-
+  
+    func setFlipsLabel(){
+        let attributes: [NSAttributedStringKey: Any] = [
+            .strokeWidth : 5.0,
+            .strokeColor : UIColor.orange
+        ]
+        let flipsCounts = NSAttributedString(string: "Flips: \(game.numberOfFlips)", attributes: attributes)
+        flipCountLabel.attributedText = flipsCounts
+    }
     
     func updateViewFromModel(){
-        flipCountLabel.text = "Flips: \(game.numberOfFlips)"
+        setFlipsLabel()
         scoreLabel.text = "Score: \(game.score)"
+         
         for index in cardButtons.indices{
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -107,11 +122,13 @@ class ViewController: UIViewController {
     
     func emoji(for card: Card)->String{
         
-        if emoji[card.identifier]==nil,dictionaryOfThemes[currentEmojiThemeName] != nil,dictionaryOfThemes[currentEmojiThemeName]!.count>0{
+        if emoji[card]==nil, dictionaryOfThemes[currentEmojiThemeName] != nil, dictionaryOfThemes[currentEmojiThemeName]!.count>0{
+            
             let randomIndex = Int(arc4random_uniform(UInt32(dictionaryOfThemes[currentEmojiThemeName]!.count)))
-            emoji[card.identifier]=dictionaryOfThemes[currentEmojiThemeName]!.remove(at: randomIndex)
+            emoji[card]=dictionaryOfThemes[currentEmojiThemeName]!.remove(at: randomIndex)
+            
         }
-        return emoji[card.identifier] ?? "?"
+        return emoji[card] ?? "?"
     }
     
     @IBAction func newGameButtonPressed(_ sender: UIButton) {

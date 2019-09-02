@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Concentration{
+struct Concentration{
     private(set) var cards =  [Card]()////////////////
     public var numberOfFlips = 0
     public var score = 0
@@ -17,18 +17,19 @@ class Concentration{
     
     private var indexOfOnlyFacedUpCard: Int?{
         get{
-            var onlyOneCardFacedUp: Int?
-            for index in cards.indices{
-                if cards[index].isFaceUp{
-                    if onlyOneCardFacedUp==nil{
-                        onlyOneCardFacedUp=index
-                    } else{
-                        return nil
-                    }
-                }
-               
-            }
-            return onlyOneCardFacedUp
+            return cards.indices.filter{cards[$0].isFaceUp}.oneAndOnly
+//            var onlyOneCardFacedUp: Int?
+//            for index in cards.indices{
+//                if cards[index].isFaceUp{
+//                    if onlyOneCardFacedUp==nil{
+//                        onlyOneCardFacedUp=index
+//                    } else{
+//                        return nil
+//                    }
+//                }
+//
+//            }
+//            return onlyOneCardFacedUp
         }
         
         set{
@@ -38,7 +39,7 @@ class Concentration{
         }
     }
     
-    func chooseCard(at index: Int){
+    mutating func chooseCard(at index: Int){
         assert(cards.indices.contains(index), "Concentration.chooseCard(at:\(index): no index like that in cards!")
         //changing Flips number but checking if card is aplicable
         if cards[index].isMatched==false, cards[index].isFaceUp==false{
@@ -49,7 +50,7 @@ class Concentration{
             //if there is one and only one faced up card and it's not the one we just opened...
             if let matchedIndex = indexOfOnlyFacedUpCard, index != matchedIndex{
                 //if its identifier equals to identifier of previously faced up card...
-                if cards[index].identifier == cards[matchedIndex].identifier{
+                if cards[index] == cards[matchedIndex]{
                     //Bingo!
                     cards[index].isMatched=true
                     cards[matchedIndex].isMatched=true
@@ -70,11 +71,18 @@ class Concentration{
             }
         }
         
-        for i in cards.indices{
-            if cards[i].isMatched == false{
-                return
-            }
+        
+        //substitution for the bottom
+        if cards.contains(where: {$0.isMatched==false}){
+            return
         }
+//        for i in cards.indices{
+//            if cards[i].isMatched == false{
+//                return
+//            }
+//        }
+        
+        
         
         goToNextLevel = true
         level += 1
@@ -95,5 +103,11 @@ class Concentration{
             cards[randomIndex]=tempCard
         }
         //cards.shuffle()
+    }
+}
+
+extension Collection{
+    var oneAndOnly: Element?{
+        return count == 1 ? first : nil
     }
 }
