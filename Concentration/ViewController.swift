@@ -135,14 +135,14 @@ class ViewController: UIViewController {
     @IBAction func newGameButtonPressed(_ sender: UIButton) {
         levelCount = 1
         levelLabel.text = "Level: \(levelCount) "
-        game = Concentration(numberOfPairsOfCards: (cardButtons.count+1)/2)
+        game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
         dictionaryOfThemes =
-            ["emojiHalloween":["👻","🎃", "🍭","😈","🕷","🕸"],
-             "emojiNewYear":["🥂","⛄️","❄️","🌲","🐉","🎅🏻"],
-             "emojiIndependenceDay":["🇺🇸","🇺🇦","🗽","🇺🇳","👮🏻‍♂️","👨🏿‍💼"],
-             "emojiValentinesDay":["💕","🌹","💑","🍷","💋","🥰"],
-             "emojiMashaSamovol": ["👸🏽","😍","❤️","🥇","🍣","🐱"],
-             "emojiStudyingDay":["🤓","🤔","👨🏼‍🏫","🏫","🚌","🎓"]]
+            ["emojiHalloween" : ["👻","🎃", "🍭","😈","🕷","🕸"],
+             "emojiNewYear" : ["🥂","⛄️","❄️","🌲","🐉","🎅🏻"],
+             "emojiIndependenceDay" : ["🇺🇸","🇺🇦","🗽","🇺🇳","👮🏻‍♂️","👨🏿‍💼"],
+             "emojiValentinesDay" : ["💕","🌹","💑","🍷","💋","🥰"],
+             "emojiMashaSamovol" : ["👸🏽","😍","❤️","🥇","🍣","🐱"],
+             "emojiStudyingDay" : ["🤓","🤔","👨🏼‍🏫","🏫","🚌","🎓"]]
         
         //currentEmojiThemeName = //Array(dictionaryOfThemes.keys)[Int(arc4random_uniform(UInt32(Array(dictionaryOfThemes).count)))]
         currentEmojiThemeName = "emojiHalloween"
@@ -153,12 +153,12 @@ class ViewController: UIViewController {
     func transitionToDifferentLevel(level: Int) {
         game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
         dictionaryOfThemes =
-            ["emojiHalloween":["👻","🎃", "🍭","😈","🕷","🕸"],
-             "emojiNewYear":["🥂","⛄️","❄️","🌲","🐉","🎅🏻"],
-             "emojiIndependenceDay":["🇺🇸","🇺🇦","🗽","🇺🇳","👮🏻‍♂️","👨🏿‍💼"],
-             "emojiValentinesDay":["💕","🌹","💑","🍷","💋","🥰"],
-             "emojiMashaSamovol": ["👸🏽","😍","❤️","🥇","🍣","🐱"],
-             "emojiStudyingDay":["🤓","🤔","👨🏼‍🏫","🏫","🚌","🎓"]]
+            ["emojiHalloween" : ["👻","🎃", "🍭","😈","🕷","🕸"],
+             "emojiNewYear" : ["🥂","⛄️","❄️","🌲","🐉","🎅🏻"],
+             "emojiIndependenceDay" : ["🇺🇸","🇺🇦","🗽","🇺🇳","👮🏻‍♂️","👨🏿‍💼"],
+             "emojiValentinesDay" : ["💕","🌹","💑","🍷","💋","🥰"],
+             "emojiMashaSamovol" : ["👸🏽","😍","❤️","🥇","🍣","🐱"],
+             "emojiStudyingDay" : ["🤓","🤔","👨🏼‍🏫","🏫","🚌","🎓"]]
         
       
         while true {
@@ -177,23 +177,23 @@ class ViewController: UIViewController {
     func initialViewSettings(){
         switch currentEmojiThemeName {
         case "emojiNewYear":
-            backgroundColor=#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
-            cardsColor=#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+            backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+            cardsColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
         case "emojiIndependenceDay":
-            backgroundColor=#colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
-            cardsColor=#colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
+            backgroundColor = #colorLiteral(red: 0.7450980544, green: 0.1568627506, blue: 0.07450980693, alpha: 1)
+            cardsColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
         case "emojiValentinesDay":
-            backgroundColor=#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
-            cardsColor=#colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 1)
+            backgroundColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+            cardsColor = #colorLiteral(red: 0.9995340705, green: 0.988355577, blue: 0.4726552367, alpha: 1)
         case "emojiMashaSamovol":
-            backgroundColor=#colorLiteral(red: 0.0201725252, green: 0.4219881296, blue: 0.02140678838, alpha: 1)
-            cardsColor=#colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
+            backgroundColor = #colorLiteral(red: 0.0201725252, green: 0.4219881296, blue: 0.02140678838, alpha: 1)
+            cardsColor = #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1)
         case "emojiStudyingDay":
-            backgroundColor=#colorLiteral(red: 1, green: 0.8323456645, blue: 0.4732058644, alpha: 1)
-            cardsColor=#colorLiteral(red: 0.4620226622, green: 0.8382837176, blue: 1, alpha: 1)
+            backgroundColor = #colorLiteral(red: 1, green: 0.8323456645, blue: 0.4732058644, alpha: 1)
+            cardsColor = #colorLiteral(red: 0.4620226622, green: 0.8382837176, blue: 1, alpha: 1)
         default:
-            backgroundColor=#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-            cardsColor=#colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
+            backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            cardsColor = #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
             
         }
 
