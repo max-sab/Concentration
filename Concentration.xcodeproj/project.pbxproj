@@ -14,6 +14,7 @@
 		5027B5572242EAA100B483D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5027B5552242EAA100B483D0 /* Main.storyboard */; };
 		5027B5592242EAA100B483D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5027B5582242EAA100B483D0 /* Assets.xcassets */; };
 		5027B55C2242EAA100B483D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5027B55A2242EAA100B483D0 /* LaunchScreen.storyboard */; };
+		50C438D524BB0A47008700A6 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C438D424BB0A47008700A6 /* Theme.swift */; };
 		50DBEB2222B03CB6001D9BB5 /* StartWindowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBEB2122B03CB6001D9BB5 /* StartWindowViewController.swift */; };
 		50DBEB2422B04161001D9BB5 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBEB2322B04161001D9BB5 /* PopUpViewController.swift */; };
 		50DBEB2922B06DD0001D9BB5 /* FinishGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DBEB2822B06DD0001D9BB5 /* FinishGameViewController.swift */; };
@@ -31,6 +32,7 @@
 		5027B5582242EAA100B483D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5027B55B2242EAA100B483D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5027B55D2242EAA100B483D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50C438D424BB0A47008700A6 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		50DBEB2122B03CB6001D9BB5 /* StartWindowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWindowViewController.swift; sourceTree = "<group>"; };
 		50DBEB2322B04161001D9BB5 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		50DBEB2822B06DD0001D9BB5 /* FinishGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGameViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				5027B55D2242EAA100B483D0 /* Info.plist */,
 				50DBEB2122B03CB6001D9BB5 /* StartWindowViewController.swift */,
 				50DBEB2822B06DD0001D9BB5 /* FinishGameViewController.swift */,
+				50C438D424BB0A47008700A6 /* Theme.swift */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5027B5542242EAA100B483D0 /* ViewController.swift in Sources */,
+				50C438D524BB0A47008700A6 /* Theme.swift in Sources */,
 				50DBEB2422B04161001D9BB5 /* PopUpViewController.swift in Sources */,
 				50DBEB2922B06DD0001D9BB5 /* FinishGameViewController.swift in Sources */,
 				50DBEB2222B03CB6001D9BB5 /* StartWindowViewController.swift in Sources */,
