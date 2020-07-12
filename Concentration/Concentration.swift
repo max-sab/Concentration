@@ -27,6 +27,23 @@ struct Concentration {
             }
         }
     }
+
+    init(numberOfPairsOfCards:Int) {
+        assert(numberOfPairsOfCards>0, "init(numberOfPairsOfCards:\(numberOfPairsOfCards): number should be larger than zero!")
+        for _ in 1...numberOfPairsOfCards{
+            let card = Card()
+            cards+=[card,card]
+        }
+
+        //shuffle cards using Fisher-Yates algorithm
+        for index in cards.indices {
+            let randomIndex = Int(arc4random_uniform(UInt32(cards.count - index)))
+            let tempCard = cards[index]
+            cards[index] = cards[randomIndex]
+            cards[randomIndex] = tempCard
+        }
+        //cards.shuffle()
+    }
     
     mutating func chooseCard(at index: Int) {
         assert(cards.indices.contains(index), "Concentration.chooseCard(at:\(index): no index like that in cards!")
@@ -72,23 +89,6 @@ struct Concentration {
 
         goToNextLevel = true
         level += 1
-    }
-    
-    init(numberOfPairsOfCards:Int) {
-        assert(numberOfPairsOfCards>0, "init(numberOfPairsOfCards:\(numberOfPairsOfCards): number should be larger than zero!")
-        for _ in 1...numberOfPairsOfCards{
-            let card = Card()
-            cards+=[card,card]
-        }
-        
-        //shuffle cards using Fisher-Yates algorithm
-        for index in cards.indices {
-            let randomIndex = Int(arc4random_uniform(UInt32(cards.count - index)))
-            let tempCard = cards[index]
-            cards[index] = cards[randomIndex]
-            cards[randomIndex] = tempCard
-        }
-        //cards.shuffle()
     }
 }
 
