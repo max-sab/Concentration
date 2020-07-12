@@ -13,7 +13,6 @@ class FinishGameViewController: UIViewController {
  
     @IBOutlet weak var popUp: UIView!
     @IBAction func finishGameButtonPressed(_ sender: UIButton) {
-          //exit(0)
           self.view.removeFromSuperview()
     }
     
@@ -26,12 +25,8 @@ class FinishGameViewController: UIViewController {
         
         // Configure
         confetti.config.particle = .confetti(allowedShapes: Particle.ConfettiShape.all)
-        
-        
+
         // Start
         confetti.start()
-        
-
-        // Do any additional setup after loading the view.
     }
 }
