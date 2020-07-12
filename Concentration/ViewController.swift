@@ -12,13 +12,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count+1)/2)
+    lazy var game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
     
-    @IBOutlet weak var flipCountLabel: UILabel!{
-        didSet{
+    @IBOutlet weak var flipCountLabel: UILabel! {
+        didSet {
             setFlipsLabel() 
         }
     }
+
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var levelLabel: UILabel!
     
@@ -54,77 +55,77 @@ class ViewController: UIViewController {
     
     
     @IBAction func touchCard(_ sender: UIButton) {
-        if let cardNumber = cardButtons.index(of: sender){
+        if let cardNumber = cardButtons.index(of: sender) {
              game.chooseCard(at: cardNumber)
              updateViewFromModel()
-            if game.goToNextLevel == true{
-                if levelCount<maxLevel{
-                    let popUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpVCid") as! PopUpViewController // 1
+            if game.goToNextLevel == true {
+                if levelCount < maxLevel{
+                    let popUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "popUpVCid") as! PopUpViewController
                     
-                    self.addChildViewController(popUpVC) // 2
-                    popUpVC.view.frame = self.view.frame  // 3
-                    self.view.addSubview(popUpVC.view) // 4
+                    self.addChildViewController(popUpVC)
+                    popUpVC.view.frame = self.view.frame
+                    self.view.addSubview(popUpVC.view)
                     
-                    popUpVC.didMove(toParentViewController: self) // 5
+                    popUpVC.didMove(toParentViewController: self)
                     
                     transitionToDifferentLevel(level: game.level)
-                     levelCount += 1
+                    levelCount += 1
                     levelLabel.text = "Level: \(levelCount) "
                     
                     game.goToNextLevel = false
-                } else{
+
+                } else {
                     arrOfUsedEmojis.removeAll()
                     newGameButtonPressed(cardButtons[0])
-                    let popUpFinish = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "finishedGamePopUp") as! FinishGameViewController // 1
+                    let popUpFinish = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "finishedGamePopUp") as! FinishGameViewController
                     
-                    self.addChildViewController(popUpFinish) // 2
-                    popUpFinish.view.frame = self.view.frame  // 3
-                    self.view.addSubview(popUpFinish.view) // 4
+                    self.addChildViewController(popUpFinish)
+                    popUpFinish.view.frame = self.view.frame
+                    self.view.addSubview(popUpFinish.view)
                     
-                    popUpFinish.didMove(toParentViewController: self) // 5
-                    
-                    
+                    popUpFinish.didMove(toParentViewController: self)
                 }
-               
             }
             
-        } else{
+        } else {
             print("Wrong card chosen")
         }
     }
   
-    func setFlipsLabel(){
+    func setFlipsLabel() {
         let attributes: [NSAttributedStringKey: Any] = [
             .strokeWidth : 5.0,
             .strokeColor : UIColor.orange
         ]
+
         let flipsCounts = NSAttributedString(string: "Flips: \(game.numberOfFlips)", attributes: attributes)
         flipCountLabel.attributedText = flipsCounts
     }
     
-    func updateViewFromModel(){
+    func updateViewFromModel() {
         setFlipsLabel()
         scoreLabel.text = "Score: \(game.score)"
          
         for index in cardButtons.indices{
             let button = cardButtons[index]
             let card = game.cards[index]
-            if card.isFaceUp{
+            if card.isFaceUp {
                 button.setTitle(emoji(for: card), for: UIControlState.normal)
-                button.backgroundColor=cardsColor
-            } else{
-                button.setTitle("", for: UIControlState.normal);
+                button.backgroundColor = cardsColor
+            } else {
+                button.setTitle("", for: UIControlState.normal)
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0) : cardsColor
             }
         }
       
     }
     
-    func emoji(for card: Card)->String{
+    func emoji(for card: Card) -> String {
         
-        if emoji[card]==nil, dictionaryOfThemes[currentEmojiThemeName] != nil, dictionaryOfThemes[currentEmojiThemeName]!.count>0{
+        if emoji[card] == nil, dictionaryOfThemes[currentEmojiThemeName] != nil, dictionaryOfThemes[currentEmojiThemeName]!.count > 0{
             
             let randomIndex = Int(arc4random_uniform(UInt32(dictionaryOfThemes[currentEmojiThemeName]!.count)))
+
             emoji[card]=dictionaryOfThemes[currentEmojiThemeName]!.remove(at: randomIndex)
             
         }
@@ -149,8 +150,8 @@ class ViewController: UIViewController {
         updateViewFromModel()
     }
     
-    func transitionToDifferentLevel(level: Int){
-        game = Concentration(numberOfPairsOfCards: (cardButtons.count+1)/2)
+    func transitionToDifferentLevel(level: Int) {
+        game = Concentration(numberOfPairsOfCards: (cardButtons.count + 1) / 2)
         dictionaryOfThemes =
             ["emojiHalloween":["👻","🎃", "🍭","😈","🕷","🕸"],
              "emojiNewYear":["🥂","⛄️","❄️","🌲","🐉","🎅🏻"],
@@ -160,9 +161,9 @@ class ViewController: UIViewController {
              "emojiStudyingDay":["🤓","🤔","👨🏼‍🏫","🏫","🚌","🎓"]]
         
       
-        while true{
+        while true {
             currentEmojiThemeName = Array(dictionaryOfThemes.keys)[Int(arc4random_uniform(UInt32(Array(dictionaryOfThemes).count)))]
-            if !arrOfUsedEmojis.contains(currentEmojiThemeName){
+            if !arrOfUsedEmojis.contains(currentEmojiThemeName) {
                 arrOfUsedEmojis.append(currentEmojiThemeName)
                 break
             }
@@ -174,7 +175,7 @@ class ViewController: UIViewController {
     }
     
     func initialViewSettings(){
-        switch currentEmojiThemeName{
+        switch currentEmojiThemeName {
         case "emojiNewYear":
             backgroundColor=#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             cardsColor=#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
@@ -195,11 +196,11 @@ class ViewController: UIViewController {
             cardsColor=#colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
             
         }
+
         view.backgroundColor=backgroundColor
-        for index in cardButtons.indices{
+        for index in cardButtons.indices {
             cardButtons[index].backgroundColor = cardsColor
         }
     }
-    
 }
 
