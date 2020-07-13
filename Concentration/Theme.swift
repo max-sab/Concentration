@@ -11,7 +11,7 @@ import UIKit
 
 struct Theme {
     let name: String
-    let emojiPackage: [String]
+    var emojiPackage: [String]
     let backgroundColor: UIColor
     let cardColor: UIColor
 }
