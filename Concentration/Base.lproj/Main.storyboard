@@ -279,7 +279,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1U-mW-9hq">
-                                        <rect key="frame" x="37.666666666666686" y="62.666666666666686" width="167" height="38"/>
+                                        <rect key="frame" x="37.666666666666671" y="62.666666666666686" width="167" height="38"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
                                         <state key="normal" title="Go To Next Level">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -336,6 +336,7 @@
                                         </state>
                                         <connections>
                                             <action selector="closePopUp:" destination="8xb-Nh-MR4" eventType="touchUpInside" id="9w5-a5-GSR"/>
+                                            <action selector="finishGameButtonPressed:" destination="GTa-MC-SXE" eventType="touchUpInside" id="OWi-b4-KlW"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Congratulations!  Maximum Level Reached!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUC-2o-Uig">
@@ -367,6 +368,9 @@
                             <constraint firstItem="qDc-Jr-x5m" firstAttribute="centerY" secondItem="gZL-u0-LZc" secondAttribute="centerY" id="zok-VO-wVO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="popUp" destination="qDc-Jr-x5m" id="FvI-9w-Mip"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6Q-AV-p7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

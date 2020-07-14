@@ -55,9 +55,8 @@ class ViewController: UIViewController {
                     self.view.addSubview(popUpVC.view)
                     
                     popUpVC.didMove(toParentViewController: self)
-                    
-                    transitionToDifferentLevel(level: levelCount)
                     levelCount += 1
+                    transitionToDifferentLevel(level: levelCount)
                     levelLabel.text = "Level: \(levelCount) "
                     
                     game.goToNextLevel = false
@@ -109,7 +108,6 @@ class ViewController: UIViewController {
                 button.backgroundColor = card.isMatched ? #colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 0) : currentEmojiTheme.cardColor
             }
         }
-
     }
     
     func emoji(for card: Card) -> String {
