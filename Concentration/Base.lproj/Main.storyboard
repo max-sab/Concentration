@@ -326,10 +326,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDc-Jr-x5m">
-                                <rect key="frame" x="-10.666666666666657" y="371.33333333333331" width="435.33333333333326" height="163.33333333333331"/>
+                                <rect key="frame" x="82" y="378" width="250" height="150"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meL-GE-Ohc">
-                                        <rect key="frame" x="155.33333333333331" y="62.666666666666686" width="125" height="38"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="meL-GE-Ohc">
+                                        <rect key="frame" x="55" y="77" width="133" height="31"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="21"/>
                                         <state key="normal" title="Finish Game">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -339,11 +339,14 @@
                                             <action selector="finishGameButtonPressed:" destination="GTa-MC-SXE" eventType="touchUpInside" id="OWi-b4-KlW"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Congratulations!  Maximum Level Reached!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUC-2o-Uig">
-                                        <rect key="frame" x="48" y="0.0" width="342" height="63"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="58" id="Pa3-gY-qF3"/>
-                                        </constraints>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations! " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUC-2o-Uig">
+                                        <rect key="frame" x="44" y="0.0" width="162.33333333333334" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Maximum Level Reached!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NaE-DP-jYv">
+                                        <rect key="frame" x="7" y="26" width="239" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -351,20 +354,21 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="meL-GE-Ohc" firstAttribute="centerY" secondItem="qDc-Jr-x5m" secondAttribute="centerY" id="Frz-LC-DMm"/>
-                                    <constraint firstItem="meL-GE-Ohc" firstAttribute="centerX" secondItem="qDc-Jr-x5m" secondAttribute="centerX" id="HKF-vp-eo2"/>
-                                    <constraint firstItem="meL-GE-Ohc" firstAttribute="centerX" secondItem="qDc-Jr-x5m" secondAttribute="centerX" id="Rz0-hY-R0j"/>
-                                    <constraint firstItem="sUC-2o-Uig" firstAttribute="centerX" secondItem="qDc-Jr-x5m" secondAttribute="centerX" id="aSQ-yX-HqB"/>
-                                    <constraint firstItem="meL-GE-Ohc" firstAttribute="firstBaseline" secondItem="sUC-2o-Uig" secondAttribute="baseline" constant="28" symbolType="layoutAnchor" id="b0G-rt-mAW"/>
-                                    <constraint firstItem="sUC-2o-Uig" firstAttribute="leading" secondItem="qDc-Jr-x5m" secondAttribute="leading" constant="15" id="mI2-Ee-HM4"/>
-                                    <constraint firstItem="sUC-2o-Uig" firstAttribute="top" secondItem="qDc-Jr-x5m" secondAttribute="topMargin" id="v5g-Nr-xl9"/>
+                                    <constraint firstItem="sUC-2o-Uig" firstAttribute="top" secondItem="qDc-Jr-x5m" secondAttribute="top" id="Iuv-O9-dvG"/>
+                                    <constraint firstItem="sUC-2o-Uig" firstAttribute="centerX" secondItem="qDc-Jr-x5m" secondAttribute="centerX" id="Vyp-ZY-8z0"/>
+                                    <constraint firstItem="NaE-DP-jYv" firstAttribute="centerX" secondItem="qDc-Jr-x5m" secondAttribute="centerX" id="a9G-4l-zsQ"/>
+                                    <constraint firstItem="NaE-DP-jYv" firstAttribute="top" secondItem="sUC-2o-Uig" secondAttribute="bottom" constant="2" id="aYX-56-SwC"/>
+                                    <constraint firstItem="meL-GE-Ohc" firstAttribute="centerX" secondItem="qDc-Jr-x5m" secondAttribute="centerX" id="bzt-dv-BZd"/>
+                                    <constraint firstItem="meL-GE-Ohc" firstAttribute="centerY" secondItem="qDc-Jr-x5m" secondAttribute="centerY" id="cfd-ce-hpF"/>
+                                    <constraint firstAttribute="height" constant="150" id="mZC-Ym-Uce"/>
+                                    <constraint firstAttribute="width" constant="250" id="xHn-tM-b5v"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gZL-u0-LZc"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qDc-Jr-x5m" firstAttribute="centerX" secondItem="gZL-u0-LZc" secondAttribute="centerX" id="g40-tB-z3X"/>
+                            <constraint firstItem="qDc-Jr-x5m" firstAttribute="centerX" secondItem="gZL-u0-LZc" secondAttribute="centerX" id="rUH-s6-05Z"/>
                             <constraint firstItem="qDc-Jr-x5m" firstAttribute="centerY" secondItem="gZL-u0-LZc" secondAttribute="centerY" id="zok-VO-wVO"/>
                         </constraints>
                     </view>
@@ -374,7 +378,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6Q-AV-p7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="947.65625" y="489.84374999999994"/>
+            <point key="canvasLocation" x="946.37681159420299" y="489.50892857142856"/>
         </scene>
     </scenes>
     <resources>
